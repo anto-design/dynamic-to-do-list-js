@@ -1,4 +1,4 @@
-  document.addEventListener('DOMContentLoaded', (event)=>{
+document.addEventListener('DOMContentLoaded', (event)=>{
   const addButton = document.getElementById('add-task-btn')
   const taskInput = document.getElementById('task-input')
   const taskList = document.getElementById('task-list')
@@ -12,7 +12,11 @@ let todoListHTML = ''
 
 for(let i = 0 ; i < todoList.length; i++ ) {
 const todo = todoList[i]
-const html = `<li>${todo}</li>`
+const html = `<li>${todo}<button onclick="
+todoList.splice(${i}, 1)
+renderTodoList();
+
+" class="remove-btn"> Remove</button></li>`
 todoListHTML+=html;
 }
 
