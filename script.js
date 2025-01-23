@@ -18,6 +18,9 @@ renderTodoList();
 
 " class="remove-btn"> Remove</button></li>`
 todoListHTML+=html;
+
+document.createElement.classList.add('add')
+document.appendChild('tasklist')
 }
 
 taskList.innerHTML = todoListHTML
