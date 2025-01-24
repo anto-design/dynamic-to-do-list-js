@@ -18,14 +18,16 @@ renderTodoList();
 
 " class="remove-btn"> Remove</button></li>`
 todoListHTML+=html;
-
-document.createElement.classList.add('add')
-document.appendChild('tasklist')
 }
 
 taskList.innerHTML = todoListHTML
 
 }
+
+
+document.createElement.classList.add('add')
+document.appendChild('tasklist')
+
 
   function addTask() {
 
@@ -38,7 +40,23 @@ taskList.innerHTML = todoListHTML
     if(taskText === '') {
       alert('please input value')
     }
+    
 
     renderTodoList();
   };
+
+
+  addButton.addEventListener('keypress' , (event)=>{
+    if(event.key === 'Enter'){
+      addTask();
+    }
+    
+  })
+  taskInput.addEventListener('keypress' , (event)=>{
+    if(event.key === 'Enter') {
+      renderTodoList();
+    }
+  })
+
+
 })
